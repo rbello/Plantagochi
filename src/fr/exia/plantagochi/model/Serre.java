@@ -14,6 +14,14 @@ public class Serre {
 	public List<Plante> getPlantes() {
 		return plantes;
 	}
+	
+	public Plante getPlante(int idPlante) {
+		for (Plante plante : this.plantes) {
+			if (plante.getIdPlante() == idPlante)
+				return plante;
+		}
+		return null;
+	}
 
 	public void addPlante(Plante plante) {
 		this.plantes.add(plante);

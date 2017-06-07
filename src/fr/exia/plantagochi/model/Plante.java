@@ -1,6 +1,8 @@
 package fr.exia.plantagochi.model;
 
-public class Plante {
+import java.util.Observable;
+
+public class Plante extends Observable {
 
 	private int idPlante;
 	
@@ -64,6 +66,10 @@ public class Plante {
 
 	public Espece getEspece() {
 		return espece;
+	}
+
+	public void hasBeenChanged() {
+		setChanged();
 	}
 
 }
