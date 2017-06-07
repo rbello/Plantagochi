@@ -1,37 +1,27 @@
 package fr.exia.plantagochi.view;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import java.awt.Color;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
 import java.awt.Font;
-import javax.swing.SwingConstants;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 
 public class Window extends JFrame {
 
-	private JPanel contentPane;
+	private static final long serialVersionUID = 2787042749006344377L;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Window frame = new Window();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	private JPanel contentPane;
+	private JLabel iconLuminosite;
+	private JLabel labelTemperatureAir;
+	private JLabel labelHumiditeAir;
+	private JLabel labelHumiditeSol;
+	private JLabel iconBackground;
+	private JButton buttonSwitchLumiere;
 
 	/**
 	 * Create the frame.
@@ -46,40 +36,69 @@ public class Window extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel iconLuminosite = new JLabel("");
+		iconLuminosite = new JLabel("");
 		iconLuminosite.setHorizontalAlignment(SwingConstants.CENTER);
 		iconLuminosite.setIcon(new ImageIcon(Window.class.getResource("/fr/exia/plantagochi/view/icon-moon.jpg")));
 		iconLuminosite.setBounds(29, 27, 63, 58);
 		contentPane.add(iconLuminosite);
 		
-		JLabel labelTemperatureAir = new JLabel("0 T\u00B0");
+		labelTemperatureAir = new JLabel("0 T\u00B0");
 		labelTemperatureAir.setHorizontalAlignment(SwingConstants.CENTER);
 		labelTemperatureAir.setForeground(new Color(50, 205, 50));
 		labelTemperatureAir.setFont(new Font("Tahoma", Font.BOLD, 22));
-		labelTemperatureAir.setBounds(354, 52, 77, 51);
+		labelTemperatureAir.setBounds(339, 52, 106, 51);
 		contentPane.add(labelTemperatureAir);
 		
-		JLabel labelHumiditeAir = new JLabel("0 %");
+		labelHumiditeAir = new JLabel("0 %");
 		labelHumiditeAir.setHorizontalAlignment(SwingConstants.CENTER);
 		labelHumiditeAir.setForeground(new Color(65, 105, 225));
 		labelHumiditeAir.setFont(new Font("Tahoma", Font.BOLD, 22));
-		labelHumiditeAir.setBounds(354, 114, 77, 51);
+		labelHumiditeAir.setBounds(339, 114, 106, 51);
 		contentPane.add(labelHumiditeAir);
 		
-		JLabel labelHumiditeSol = new JLabel("0 %");
+		labelHumiditeSol = new JLabel("0 %");
 		labelHumiditeSol.setHorizontalAlignment(SwingConstants.CENTER);
 		labelHumiditeSol.setForeground(new Color(65, 105, 225));
 		labelHumiditeSol.setFont(new Font("Tahoma", Font.BOLD, 22));
-		labelHumiditeSol.setBounds(247, 434, 77, 51);
+		labelHumiditeSol.setBounds(247, 434, 114, 51);
 		contentPane.add(labelHumiditeSol);
 		
-		JButton buttonSwitchLumiere = new JButton("Allumer");
+		buttonSwitchLumiere = new JButton("Allumer");
 		buttonSwitchLumiere.setBounds(10, 502, 89, 23);
 		contentPane.add(buttonSwitchLumiere);
 		
-		JLabel iconBackground = new JLabel("");
+		iconBackground = new JLabel("");
 		iconBackground.setIcon(new ImageIcon(Window.class.getResource("/fr/exia/plantagochi/view/background-plante.png")));
 		iconBackground.setBounds(10, 11, 351, 514);
 		contentPane.add(iconBackground);
 	}
+
+	public JPanel getContentPane() {
+		return contentPane;
+	}
+
+	public JLabel getIconLuminosite() {
+		return iconLuminosite;
+	}
+
+	public JLabel getLabelTemperatureAir() {
+		return labelTemperatureAir;
+	}
+
+	public JLabel getLabelHumiditeAir() {
+		return labelHumiditeAir;
+	}
+
+	public JLabel getLabelHumiditeSol() {
+		return labelHumiditeSol;
+	}
+
+	public JButton getButtonSwitchLumiere() {
+		return buttonSwitchLumiere;
+	}
+
+	public JLabel getIconBackground() {
+		return iconBackground;
+	}
+	
 }

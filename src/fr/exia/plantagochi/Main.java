@@ -2,6 +2,8 @@ package fr.exia.plantagochi;
 
 import javax.swing.SwingUtilities;
 
+import fr.exia.plantagochi.cad.CAD;
+import fr.exia.plantagochi.cad.FakeGenerator;
 import fr.exia.plantagochi.ctrl.WindowController;
 import fr.exia.plantagochi.model.Espece;
 import fr.exia.plantagochi.model.Plante;
@@ -28,6 +30,13 @@ public class Main {
 		// On lance le controlleur
 		// ctrl.run(); // Pas directement !!
 		SwingUtilities.invokeLater(ctrl); // Mais via l'IHM
+		
+		// On lance la CAD
+		CAD cad = new FakeGenerator();
+		cad.setModel(serre);
+		Thread t = new Thread(cad);
+		t.start();
+		
 	}
 
 }
