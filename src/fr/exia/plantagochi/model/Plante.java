@@ -22,6 +22,10 @@ public class Plante {
 		this.espece = espece;
 	}
 
+	public Plante(int idPlante, Espece espece) {
+		this(idPlante, 0, 0, 0, 0, espece);
+	}
+
 	public int getIdPlante() {
 		return idPlante;
 	}
